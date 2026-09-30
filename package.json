@@ -1,0 +1,53 @@
+{
+  "name": "harmonyos-node-compat",
+  "version": "0.1.0",
+  "description": "Run Node-targeted npm packages inside a HarmonyOS ThreadWorker: fetch (with SSE streaming), Buffer, URL, TextEncoder and more, each verified against Node.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "harmonyos",
+    "openharmony",
+    "arkts",
+    "threadworker",
+    "node",
+    "npm",
+    "polyfill",
+    "shim",
+    "fetch",
+    "sse",
+    "buffer"
+  ],
+  "exports": {
+    ".": "./src/index.mjs",
+    "./buffer": "./src/buffer.mjs",
+    "./path": "./src/path.mjs",
+    "./crypto": "./src/crypto.mjs",
+    "./fetch": "./src/fetch.mjs",
+    "./network-bridge": "./src/network-bridge.mjs",
+    "./network-error": "./src/network-error.mjs",
+    "./conformance": "./src/conformance.mjs",
+    "./sdk-patches/openai-url-query": "./src/sdk-patches/openai-url-query.mjs",
+    "./sdk-patches/pi-ai-surrogates": "./src/sdk-patches/pi-ai-surrogates.mjs",
+    "./package.json": "./package.json",
+    "./harmony/*": "./harmony/*"
+  },
+  "files": [
+    "src",
+    "harmony",
+    "docs",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "example:prepare": "node scripts/prepare-example.mjs"
+  },
+  "dependencies": {
+    "web-streams-polyfill": "4.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}
